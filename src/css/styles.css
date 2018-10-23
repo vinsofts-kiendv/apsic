@@ -3,3 +3,14 @@ header .nav-link {
 	font-weight: bold;
 	color: #9893a4;
 }
+.sticky.is-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+.navbar {
+    background: #ffffff;
+}

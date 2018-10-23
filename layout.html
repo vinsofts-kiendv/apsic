@@ -18,8 +18,8 @@
     			<div>
     				<img src="src/images/slide1.png" width="100%" height="161">
     			</div>
-    			<nav class="navbar navbar-expand-lg navbar-light" data-toggle="sticky-onscroll">
-					<div class="">
+    			<nav class="navbar navbar-expand-lg navbar-light top-navbar" data-toggle="sticky-onscroll">
+					<div class="container">
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 						</button>
@@ -224,3 +224,37 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</body>
 </html>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        // Custom function which toggles between sticky class (is-sticky)
+        var stickyToggle = function (sticky, stickyWrapper, scrollElement) {
+            var stickyHeight = sticky.outerHeight();
+            var stickyTop = stickyWrapper.offset().top;
+            if (scrollElement.scrollTop() >= stickyTop) {
+                stickyWrapper.height(stickyHeight);
+                sticky.addClass("is-sticky");
+            }
+            else {
+                sticky.removeClass("is-sticky");
+                stickyWrapper.height('auto');
+            }
+        };
+
+        // Find all data-toggle="sticky-onscroll" elements
+        $('[data-toggle="sticky-onscroll"]').each(function () {
+            var sticky = $(this);
+            var stickyWrapper = $('<div>').addClass('sticky-wrapper'); // insert hidden element to maintain actual top offset on page
+            sticky.before(stickyWrapper);
+            sticky.addClass('sticky');
+
+            // Scroll & resize events
+            $(window).on('scroll.sticky-onscroll resize.sticky-onscroll', function () {
+                stickyToggle(sticky, stickyWrapper, $(this));
+            });
+
+            // On page load
+            stickyToggle(sticky, stickyWrapper, $(window));
+        });
+    });
+</script>
