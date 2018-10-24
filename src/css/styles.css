@@ -2,6 +2,8 @@ header .nav-link {
 	font-size: 11px;
 	font-weight: bold;
 	color: #9893a4;
+	margin-left: 7px;
+	margin-right: 7px;
 }
 .sticky.is-sticky {
     position: fixed;
@@ -10,8 +12,102 @@ header .nav-link {
  	right: 0;
     z-index: 1000;
 }
+nav #home {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #f5c200;
+}
+nav #committee {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #f17a00;
+}
+nav #program {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #fae27b;
+}
+nav #speaker {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #eb0063;
+}
+nav #speaker {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #eb0063;
+}
+nav #abstract {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #f17a00;
+}
+nav #register {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #ef5cb2;
+}
+nav #sponsor {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #4cc5e9;
+}
+nav #announcement {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #28abb3;
+}
+nav #general {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #b40011;
+}
+nav #hotel {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #40499c;
+}
+nav #news {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #f5c100;
+}
+nav #contact {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: solid 2px #28abb3;
+}
+.dropdown:hover>.dropdown-menu {
+	margin-top: 0;
+	display: block;
+	background: #00bcd4;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}.
+.dropdown-menu {
+	padding: 0;
+}
+.dropdown-item {
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+	color: #ffffff !important;
+	font-weight: bold !important;
+	font-size: 12px !important;
+}
+.dropdown-item:hover {
+	background: #eb098f !important;
+}
 .navbar {
     background: #ffffff;
+}
+.navbar ul li a:hover {
+	color: #00bcd4 !important;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #eb098f !important;
 }
 .main-content .large-ads-title{
 	background: #9893a4;
@@ -40,3 +136,103 @@ header .nav-link {
     width: 100%;
     float: left;
 }
+#slideshow { 
+    position: relative;
+    width: 100%;
+    height: 261px;
+}
+#slideshow .item{ 
+    width: 100%;
+}
+#slideshow > div { 
+    position: absolute; 
+}
+.contact {
+	margin-bottom: 30px;
+}
+.contact .contact-title {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.contact .contact-present {
+	color: #f8944f; 
+	font-size: 18px;
+}
+footer {
+	background: #40a3da;
+	line-height: 40px;
+	color: #ffffff;
+	text-align: center;
+}
+/* slide multiple image */
+
+	/* Load 3 item */
+	.carousel-inner .active,
+	.carousel-inner .active + .carousel-item,
+	.carousel-inner .active + .carousel-item + .carousel-item,
+	.carousel-inner .active + .carousel-item + .carousel-item + .carousel-item  {
+	    display: block;
+	}
+	.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+	.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+	.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+	.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+	    transition: none;
+	}
+	.carousel-inner .carousel-item-next,
+	.carousel-inner .carousel-item-prev {
+	  position: relative;
+	  transform: translate3d(0, 0, 0);
+	}
+	.carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+	    position: absolute;
+	    top: 0;
+	    right: -25%;
+	    z-index: -1;
+	    display: block;
+	    visibility: visible;
+	}
+
+	/* left or forward direction */
+	.active.carousel-item-left + .carousel-item-next.carousel-item-left,
+	.carousel-item-next.carousel-item-left + .carousel-item,
+	.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+	.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
+	.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+	    position: relative;
+	    transform: translate3d(-100%, 0, 0);
+	    visibility: visible;
+	}
+
+	/* farthest right hidden item must be abso position for animations */
+	.carousel-inner .carousel-item-prev.carousel-item-right {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: -1;
+	    display: block;
+	    visibility: visible;
+	}
+
+	/* right or prev direction */
+	.active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+	.carousel-item-prev.carousel-item-right + .carousel-item,
+	.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+	.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
+	.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+	    position: relative;
+	    transform: translate3d(100%, 0, 0);
+	    visibility: visible;
+	    display: block;
+	    visibility: visible;
+	}
+
+	 /* Bootstrap Lightbox using Modal */
+	#profile-grid { overflow: auto; white-space: normal; } 
+	#profile-grid .profile { padding-bottom: 40px; }
+	#profile-grid .panel { padding: 0 }
+	#profile-grid .panel-body { padding: 15px }
+	#profile-grid .profile-name { font-weight: bold; }
+	#profile-grid .thumbnail {margin-bottom:6px;}
+	#profile-grid .panel-thumbnail { overflow: hidden; }
+	#profile-grid .img-rounded { border-radius: 4px 4px 0 0;}
