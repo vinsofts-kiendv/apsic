@@ -5,12 +5,38 @@ header .nav-link {
 }
 .sticky.is-sticky {
     position: fixed;
-    left: 0;
-    right: 0;
     top: 0;
+ 	left: 0;
+ 	right: 0;
     z-index: 1000;
-    width: 100%;
 }
 .navbar {
     background: #ffffff;
+}
+.main-content .large-ads-title{
+	background: #9893a4;
+    margin-bottom: 6px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 4px;
+    color: #ffffff;
+}
+.main-content .right-menu {
+	background: #adacb1;
+	margin-bottom: 6px;
+}
+.main-content .right-menu a{
+	color: #000000;
+}
+.main-content .right-menu .item{
+	font-size: 16px;
+	line-height: 25px;
+	border-bottom: 1px solid #cdcdcd;
+}
+.line {
+    height: 2px;
+    margin-bottom: 10px;
+    background-color: #ccc9c9;
+    width: 100%;
+    float: left;
 }
