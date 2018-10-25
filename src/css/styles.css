@@ -5,12 +5,63 @@ header .nav-link {
 	margin-left: 7px;
 	margin-right: 7px;
 }
+header .header-banner {
+	position:relative;
+	background: url("../images/header_banner.png");
+	width: 100%;
+	height: 161px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+header .header-banner #countdown{
+	position: absolute;
+	bottom:15px;
+    right:52px;
+    color: #ffffff;
+}
+header .header-banner #countdown-d{
+    border-radius: 5px;
+    background-color: #40a3da;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+header .header-banner #countdown-h{
+    border-radius: 5px;
+    background-color: #f58612;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
+header .header-banner #countdown-m{
+    border-radius: 5px;
+    background-color: #25963a;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
+header .header-banner #countdown-s{
+    border-radius: 5px;
+    background-color: #b33342;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
 .sticky.is-sticky {
     position: fixed;
     top: 0;
  	left: 0;
  	right: 0;
     z-index: 1000;
+}
+.social-media ul {
+	list-style-type: none;
+}
+.social-media ul li{
+	float: right;
 }
 nav #home {
 	padding-left: 5px;
@@ -164,75 +215,32 @@ footer {
 	color: #ffffff;
 	text-align: center;
 }
-/* slide multiple image */
 
-	/* Load 3 item */
-	.carousel-inner .active,
-	.carousel-inner .active + .carousel-item,
-	.carousel-inner .active + .carousel-item + .carousel-item,
-	.carousel-inner .active + .carousel-item + .carousel-item + .carousel-item  {
-	    display: block;
+@media screen and (max-width: 48em) {
+  .countdown-container {
+    width: 100%;
+  }
+  .countdown-container .countdown-container {
+    height: 100px;
+  }
+  .countdown-container .time {
+      height: 70px;
+      width: 48px;
+  }
+  .countdown-container .count {
+    font-size: 1.5em;
+    line-height: 70px;
+  }
+  .countdown-container .label {
+    font-size: 0.8em;
+    top: 72px;
+  }
+}
+@media all and (max-width: 520px) {
+	.social-media .text {
+		display: none;
 	}
-	.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-	.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
-	.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
-	.carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
-	    transition: none;
-	}
-	.carousel-inner .carousel-item-next,
-	.carousel-inner .carousel-item-prev {
-	  position: relative;
-	  transform: translate3d(0, 0, 0);
-	}
-	.carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-	    position: absolute;
-	    top: 0;
-	    right: -25%;
-	    z-index: -1;
-	    display: block;
-	    visibility: visible;
-	}
-
-	/* left or forward direction */
-	.active.carousel-item-left + .carousel-item-next.carousel-item-left,
-	.carousel-item-next.carousel-item-left + .carousel-item,
-	.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-	.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
-	.carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-	    position: relative;
-	    transform: translate3d(-100%, 0, 0);
-	    visibility: visible;
-	}
-
-	/* farthest right hidden item must be abso position for animations */
-	.carousel-inner .carousel-item-prev.carousel-item-right {
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    z-index: -1;
-	    display: block;
-	    visibility: visible;
-	}
-
-	/* right or prev direction */
-	.active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-	.carousel-item-prev.carousel-item-right + .carousel-item,
-	.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-	.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
-	.carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-	    position: relative;
-	    transform: translate3d(100%, 0, 0);
-	    visibility: visible;
-	    display: block;
-	    visibility: visible;
-	}
-
-	 /* Bootstrap Lightbox using Modal */
-	#profile-grid { overflow: auto; white-space: normal; } 
-	#profile-grid .profile { padding-bottom: 40px; }
-	#profile-grid .panel { padding: 0 }
-	#profile-grid .panel-body { padding: 15px }
-	#profile-grid .profile-name { font-weight: bold; }
-	#profile-grid .thumbnail {margin-bottom:6px;}
-	#profile-grid .panel-thumbnail { overflow: hidden; }
-	#profile-grid .img-rounded { border-radius: 4px 4px 0 0;}
+}
+@media all and (max-width: 767px) {
+	
+}

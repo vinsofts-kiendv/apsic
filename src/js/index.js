@@ -30,49 +30,38 @@ $(document).ready(function () {
 });
 
 //Multi slide
-$('#carouselExample').on('slide.bs.carousel', function (e) {
-
-    var $e = $(e.relatedTarget);
-    var idx = $e.index();
-    var itemsPerSlide = 4;
-    var totalItems = $('.carousel-item').length;
-    
-    if (idx >= totalItems-(itemsPerSlide-1)) {
-        var it = itemsPerSlide - (totalItems - idx);
-        for (var i=0; i<it; i++) {
-            // append slides to end
-            if (e.direction=="left") {
-                $('.carousel-item').eq(i).appendTo('.carousel-inner');
-            }
-            else {
-                $('.carousel-item').eq(0).appendTo('.carousel-inner');
-            }
-        }
-    }
-});
-$('#carouselExample').carousel({ 
-    interval: 1000
-});
 $(document).ready(function() {
-/* show lightbox when clicking a thumbnail */
-	$('a.thumb').click(function(event){
-		event.preventDefault();
-		var content = $('.modal-body');
-		content.empty();
-		var title = $(this).attr("title");
-		$('.modal-title').html(title);        
-		content.html($(this).html());
-		$(".modal-profile").modal({show:true});
-	});
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items: 6,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 1000,
+        autoplayHoverPause: true
+    });
 });
-
-//Slide show
-$("#slideshow > div:gt(0)").hide();
-setInterval(function() { 
-  $('#slideshow > div:first')
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#slideshow');
-},  3000);
+//Countdown timer
+    var countDownDate = new Date("Mar 19, 2019 07:30:00").getTime();
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+        // Get todays date and time
+        var now = new Date().getTime();
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Output the result in an element with id="demo"
+        document.getElementById("countdown-d").innerHTML = days;
+        document.getElementById("countdown-h").innerHTML = hours;
+        document.getElementById("countdown-m").innerHTML = minutes;
+        document.getElementById("countdown-s").innerHTML = seconds;
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
